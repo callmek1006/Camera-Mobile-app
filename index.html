@@ -1,39 +1,63 @@
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+html, body{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  /*
+  Style the element with id="camera", "camera-view", "camera-device", "photo-display"
+  */
+  #camera, #camera-view, #camera-device, #photo-display{
+      position: fixed; /* Position of element is relative to the viewport */
+      object-fit: contain; /* The content is scaled to maintain its aspect ratio while fitting within the element's content box */
+      height: 100%;
+      width: 100%;
+  }
+  
+  /*
+  Style the element with id="take-photo-button"
+  */
+  #take-photo-button{
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 3px solid red;
+    padding: 15px 20px;
+    text-align: center;
+    left: calc(50% - 150px);
 
-        <!-- Name of the app -->
-        <title>Camera Mobile Website</title>
+  }
+  
+  /*
+  Style the element with id="take-photo-button"
+  */
+  #front-camera-button{
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 3px solid red;
+    padding: 15px 20px;
+    text-align: center;
+    left: calc(50% - 150px);
 
-        <!-- Link to main style sheet -->
-        <link rel="stylesheet" href="style.css"> 
-    </head>
-    <body>
-
-        <!-- Main content of the HTML -->
-        <main id="camera">
-
-            <!-- Camera view -->
-            <!-- canvas: Area for drawing graphics on a web page -->
-            <canvas id="camera-view"></canvas>
-            
-            <!-- Camera device -->
-            <!-- Play the video streaming in "camera-view" -->
-            <video id="camera-device" autoplay playsinline></video>
-            
-            <!-- Photo display -->
-            <img alt="" id="photo-display">
-
-            <!-- Front camera button -->
-            <button id="front-camera-button">Front Camera</button>
-
-            <!-- Take photo button -->
-            <button id="take-photo-button">Take Photo</button>
-
-        </main>
-
-        <!-- Reference to the JavaScript file -->
-        <script src="app.js"></script> 
-    </body>
-</html>
+  }
+  
+  /*
+  Class "photo-taken", which is added to "cameraOutput" in file "app.js"
+  */
+  .photo-taken{
+    top:20px;
+    right: 20px;
+    height: 100px!important; /* !important => Overrides the predefined height property (e.g., 100%) */
+    width: 100px!important; /* !important => Overrides the predefined width property (e.g., 100%) */
+  }
+  
+  /*
+Style the element with id="camera-view", "camera-device", "photo-display"
+*/
+#camera-view, #camera-device, #photo-display{
+    transform: scaleX(-1);
+}
